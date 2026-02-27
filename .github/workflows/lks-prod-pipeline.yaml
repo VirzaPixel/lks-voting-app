@@ -8,10 +8,10 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  ECR_REPOSITORY: voting-app # nanti disesuaikan 
+  ECR_REPOSITORY: lks-voting-image # disesuaikan 
   ENV: "prod"
   ECS_SERVICE_WORKER: worker-service
-  ECS_CLUSTER: demo-deploy # nanti disesuaikan
+  ECS_CLUSTER: lks-voting-cluster # disesuaikan
   WORKER_TASK_DEFINITION: worker/task-definition.json
   WORKER_CONTAINER_NAME: worker-container
 
