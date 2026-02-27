@@ -10,7 +10,7 @@ env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: lks-voting-image # disesuaikan 
   ENV: "prod"
-  ECS_SERVICE_WORKER: worker-service
+  ECS_SERVICE_WORKER: lks-worker-service # disesuaikan
   ECS_CLUSTER: lks-voting-cluster # disesuaikan
   WORKER_TASK_DEFINITION: worker/task-definition.json
   WORKER_CONTAINER_NAME: lks-worker-prod-container # disesuaikan
