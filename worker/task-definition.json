@@ -78,6 +78,5 @@
     },
     "registeredAt": "2026-02-27T04:47:48.234Z",
     "registeredBy": "arn:aws:sts::835008554939:assumed-role/voclabs/user4821150=SMKN_10_-_Vierza",
-    "enableFaultInjection": false,
     "tags": []
 }
