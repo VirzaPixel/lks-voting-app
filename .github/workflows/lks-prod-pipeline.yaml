@@ -105,12 +105,14 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     steps:    
-    - name: Publish Message To SNS Subscribers
-      run: aws sns publish --topic-arn $TOPIC_ARN --subject "Hello, from Indonesia" --message "New Version Is Released"
+    - name: Send SNS Notification
       env:
-        TOPIC_ARN: ${{ secrets.TOPIC_ARN }}
-        # tambah credentiall
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
         AWS_DEFAULT_REGION: us-east-1
+      run: |
+        aws sns publish \
+          --topic-arn "arn:aws:sns:us-east-1:835008554939:lks-vote-topic" \
+          --subject "Hello, from Indonesia" \
+          --message "New Version Is Released"
