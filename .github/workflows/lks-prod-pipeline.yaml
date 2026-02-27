@@ -13,7 +13,7 @@ env:
   ECS_SERVICE_WORKER: worker-service
   ECS_CLUSTER: lks-voting-cluster # disesuaikan
   WORKER_TASK_DEFINITION: worker/task-definition.json
-  WORKER_CONTAINER_NAME: worker-container
+  WORKER_CONTAINER_NAME: lks-worker-prod-container # disesuaikan
 
 
 permissions:
