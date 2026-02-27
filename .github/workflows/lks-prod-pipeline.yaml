@@ -11,7 +11,7 @@ env:
   ECR_REPOSITORY: lks-voting-image # disesuaikan 
   ENV: "prod"
   ECS_SERVICE_WORKER: lks-worker-service # disesuaikan
-  ECS_CLUSTER: lks-voting-cluster # disesuaikan
+  ECS_CLUSTER: lks-voting-cluster # sesuaikan
   WORKER_TASK_DEFINITION: worker/task-definition.json
   WORKER_CONTAINER_NAME: lks-worker-prod-container # disesuaikan
 
