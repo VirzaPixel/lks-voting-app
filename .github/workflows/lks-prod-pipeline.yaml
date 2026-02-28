@@ -84,6 +84,20 @@ jobs:
         WORKER_IMAGE_TAG: worker-prod-latest
         VOTE_IMAGE_TAG: vote-prod-latest
         RESULT_IMAGE_TAG: result-prod-latest
+    
+        ECS_SERVICE_WORKER: lks-worker-service
+        WORKER_TASK_DEFINITION: worker/task-definition.json
+        WORKER_CONTAINER_NAME: lks-worker-prod-container
+
+        # Vote env
+        ECS_SERVICE_VOTE: lks-vote-service
+        VOTE_TASK_DEFINITION: vote/task-definition.json 
+        VOTE_CONTAINER_NAME: lks-vote-prod-container   
+
+        # Result env
+        ECS_SERVICE_RESULT: lks-result-service
+        RESULT_TASK_DEFINITION: result/task-definition.json
+        RESULT_CONTAINER_NAME: lks-result-container
       run: |
         echo "::set-output name=worker_image::$ECR_REGISTRY/$ECR_REPOSITORY:$WORKER_IMAGE_TAG"
         echo "::set-output name=vote_image::$ECR_REGISTRY/$ECR_REPOSITORY:$VOTE_IMAGE_TAG"
