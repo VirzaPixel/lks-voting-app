@@ -19,12 +19,12 @@ env:
   WORKER_TASK_DEFINITION: worker/task-definition.json
   WORKER_CONTAINER_NAME: lks-worker-prod-container
 
- # Vote env
+ # Vote
   ECS_SERVICE_VOTE: lks-vote-service
   VOTE_TASK_DEFINITION: vote/task-definition.json 
   VOTE_CONTAINER_NAME: lks-vote-prod-container   
 
-  # Result env
+  # Result
   ECS_SERVICE_RESULT: lks-result-service
   RESULT_TASK_DEFINITION: result/task-definition.json
   RESULT_CONTAINER_NAME: lks-result-prod-container
