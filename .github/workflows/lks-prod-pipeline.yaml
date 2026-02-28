@@ -97,7 +97,7 @@ jobs:
         # Result env
         ECS_SERVICE_RESULT: lks-result-service
         RESULT_TASK_DEFINITION: result/task-definition.json
-        RESULT_CONTAINER_NAME: lks-result-container
+        RESULT_CONTAINER_NAME: lks-result-prod-container
       run: |
         echo "::set-output name=worker_image::$ECR_REGISTRY/$ECR_REPOSITORY:$WORKER_IMAGE_TAG"
         echo "::set-output name=vote_image::$ECR_REGISTRY/$ECR_REPOSITORY:$VOTE_IMAGE_TAG"
