@@ -15,10 +15,6 @@ env:
   WORKER_TASK_DEFINITION: worker/task-definition.json
   WORKER_CONTAINER_NAME: lks-worker-prod-container # disesuaikan
 
-  ECS_SERVICE_WORKER: lks-worker-service
-  WORKER_TASK_DEFINITION: worker/task-definition.json
-  WORKER_CONTAINER_NAME: lks-worker-prod-container
-
  # Vote
   ECS_SERVICE_VOTE: lks-vote-service
   VOTE_TASK_DEFINITION: vote/task-definition.json 
