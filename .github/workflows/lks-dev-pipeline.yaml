@@ -16,7 +16,7 @@
 
   jobs:
     build:
-      name: Build Image Production
+      name: Build Image Development
       runs-on: ubuntu-latest
       environment: Production
       steps:
