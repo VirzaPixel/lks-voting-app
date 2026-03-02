@@ -8,7 +8,7 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  ECR_REPOSITORY: lks-voting-image # disesuaikan 
+  ECR_REPOSITORY: lks-voting-image # sesuaikan
   ENV: "prod"
   ECS_SERVICE_WORKER: lks-worker-service # disesuaikan
   ECS_CLUSTER: lks-voting-cluster # disesuaikan
