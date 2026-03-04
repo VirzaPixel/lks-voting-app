@@ -56,10 +56,23 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         WORKER_IMAGE_TAG: worker-${{ env.ENV }}-latest
+        VOTE_IMAGE_TAG: vote-${{ env.ENV }}-latest
+        RESULT_IMAGE_TAG: result-${{ env.ENV }}-latest
       run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$WORKER_IMAGE_TAG --build-arg aws_region=${{ env.AWS_REGION }} --build-arg copy_or_mount="copy" -f worker/Dockerfile ./worker
+        # 1. Build & Push Worker
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$WORKER_IMAGE_TAG -f worker/Dockerfile ./worker
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$WORKER_IMAGE_TAG
         echo "::set-output name=worker_image::$ECR_REGISTRY/$ECR_REPOSITORY:$WORKER_IMAGE_TAG"
+        
+        # 2. Build & Push Vote (INI YANG BIKIN ERROR HILANG!)
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$VOTE_IMAGE_TAG -f vote/Dockerfile ./vote
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$VOTE_IMAGE_TAG
+        echo "::set-output name=vote_image::$ECR_REGISTRY/$ECR_REPOSITORY:$VOTE_IMAGE_TAG"
+        
+        # 3. Build & Push Result
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$RESULT_IMAGE_TAG -f result/Dockerfile ./result
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$RESULT_IMAGE_TAG
+        echo "::set-output name=result_image::$ECR_REGISTRY/$ECR_REPOSITORY:$RESULT_IMAGE_TAG"
 
     - name: End Build
       run: echo "Build Success"
