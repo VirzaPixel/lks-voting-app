@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:835008554939:task-definition/lks-td-prod-vote:4",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:835008554939:task-definition/lks-td-prod-vote:10",
     "containerDefinitions": [
         {
             "name": "lks-vote-prod-container",
@@ -15,7 +15,16 @@
                 }
             ],
             "essential": true,
-            "environment": [],
+            "environment": [
+                {
+                    "name": "REDIS",
+                    "value": "master.lks-redis.ij2nrp.use1.cache.amazonaws.com"
+                },
+                {
+                    "name": "REDIS_HOST",
+                    "value": "master.lks-redis.ij2nrp.use1.cache.amazonaws.com"
+                }
+            ],
             "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
@@ -37,7 +46,7 @@
     "taskRoleArn": "arn:aws:iam::835008554939:role/LabRole",
     "executionRoleArn": "arn:aws:iam::835008554939:role/LabRole",
     "networkMode": "awsvpc",
-    "revision": 4,
+    "revision": 10,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -72,8 +81,8 @@
     "placementConstraints": [],
     "compatibilities": [
         "EC2",
-        "MANAGED_INSTANCES",
-        "FARGATE"
+        "FARGATE",
+        "MANAGED_INSTANCES"
     ],
     "requiresCompatibilities": [
         "FARGATE"
@@ -84,7 +93,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2026-03-02T02:02:08.181Z",
+    "registeredAt": "2026-03-04T02:12:10.222Z",
     "registeredBy": "arn:aws:sts::835008554939:assumed-role/voclabs/user4821150=SMKN_10_-_Vierza",
     "tags": []
 }
