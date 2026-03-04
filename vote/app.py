@@ -18,6 +18,8 @@ app.logger.setLevel(logging.INFO)
 
 def get_redis():
     if not hasattr(g, 'redis'):
+        # tambah ini
+        redis_host = os.getenv('REDIS', 'redis')
         g.redis = Redis(host="redis", db=0, socket_timeout=5)
     return g.redis
 
