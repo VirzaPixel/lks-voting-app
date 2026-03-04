@@ -13,7 +13,7 @@ env:
   ECS_SERVICE_WORKER: lks-td-worker # disesuaikan
   ECS_CLUSTER: lks-voting-cluster # disesuaikan
   WORKER_TASK_DEFINITION: worker/task-definition.json
-  WORKER_CONTAINER_NAME: lks-worker-prod-container # seusaiakan
+  WORKER_CONTAINER_NAME: lks-worker-prod-container # disesuaikan
 
   # Vote
   ECS_SERVICE_VOTE: lks-vote-service
