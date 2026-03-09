@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:390517303308:task-definition/lks-td-prod-result:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:390517303308:task-definition/lks-td-prod-result:3",
     "containerDefinitions": [
         {
             "name": "lks-result-prod-container",
@@ -16,10 +16,8 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
@@ -27,8 +25,7 @@
                     "awslogs-create-group": "true",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
+                }
             },
             "systemControls": []
         }
@@ -37,7 +34,7 @@
     "taskRoleArn": "arn:aws:iam::390517303308:role/LabRole",
     "executionRoleArn": "arn:aws:iam::390517303308:role/LabRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 3,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -72,8 +69,8 @@
     "placementConstraints": [],
     "compatibilities": [
         "EC2",
-        "FARGATE",
-        "MANAGED_INSTANCES"
+        "MANAGED_INSTANCES",
+        "FARGATE"
     ],
     "requiresCompatibilities": [
         "FARGATE"
@@ -84,7 +81,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2026-03-09T03:54:20.554Z",
+    "registeredAt": "2026-03-09T05:56:46.214Z",
     "registeredBy": "arn:aws:sts::390517303308:assumed-role/voclabs/user4821150=SMKN_10_-_Vierza",
     "tags": []
 }
