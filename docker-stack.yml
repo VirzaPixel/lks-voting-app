@@ -11,7 +11,7 @@ services:
     networks:
       - frontend
     # sambung ke redis aws. gunakan primary endpoint di redis
-    command: tcp-listen:6379,fork,reuseaddr tcp:master.lks-redis.ij2nrp.use1.cache.amazonaws.com:6379
+    command: tcp-listen:6379,fork,reuseaddr tcp:master.lks-redis.3ogtn5.use1.cache.amazonaws.com:6379
     # backup
     deploy:
       replicas: 1
@@ -21,13 +21,13 @@ services:
     networks:
       - backend
     # sambungkan ke rds endpoint jg
-    command: tcp-listen:5432,fork,reuseaddr tcp:lks-rds.cwf8sdzaahh3.us-east-1.rds.amazonaws.com:5432
+    command: tcp-listen:5432,fork,reuseaddr tcp:lks-rds.cunsvijdc0h4.us-east-1.rds.amazonaws.com:5432
     # backup
     deploy:
       replicas: 1
 
   vote:
-    image: 835008554939.dkr.ecr.us-east-1.amazonaws.com/lks-voting-image:vote-dev-latest # sesuaikan dengan image task dev
+    image: 390517303308.dkr.ecr.us-east-1.amazonaws.com/lks-voting-image:vote-dev-latest # sesuaikan dengan image task dev
     ports:
       - 5000:80
     networks:
@@ -39,7 +39,7 @@ services:
           - node.role == worker
 
   result:
-    image: 835008554939.dkr.ecr.us-east-1.amazonaws.com/lks-voting-image:result-dev-latest # sesuaikan dengan image task dev
+    image: 390517303308.dkr.ecr.us-east-1.amazonaws.com/lks-voting-image:result-dev-latest # sesuaikan dengan image task dev
     ports:
       - 5001:80
     networks:
@@ -51,7 +51,7 @@ services:
           - node.role == worker
 
   worker:
-    image: 835008554939.dkr.ecr.us-east-1.amazonaws.com/lks-voting-image:worker-dev-latest # sesuaikan dengan image task dev
+    image: 390517303308.dkr.ecr.us-east-1.amazonaws.com/lks-voting-image:worker-dev-latest # sesuaikan dengan image task dev
     networks:
       - frontend
       - backend
