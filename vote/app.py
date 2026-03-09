@@ -16,11 +16,18 @@ gunicorn_error_logger = logging.getLogger('gunicorn.error')
 app.logger.handlers.extend(gunicorn_error_logger.handlers)
 app.logger.setLevel(logging.INFO)
 
+# def get_redis():
+#     if not hasattr(g, 'redis'):
+#         # tambah ini
+#         redis_host = os.getenv('REDIS', 'redis')
+#         g.redis = Redis(host="redis", db=0, socket_timeout=5)
+#     return g.redis
+
+# ubah jadi gini
+
 def get_redis():
     if not hasattr(g, 'redis'):
-        # tambah ini
-        redis_host = os.getenv('REDIS', 'redis')
-        g.redis = Redis(host="redis", db=0, socket_timeout=5)
+        g.redis = Redis(host="master.lks-redis.3ogtn5.use1.cache.amazonaws.com:6379", db=0, socket_timeout=5)
     return g.redis
 
 @app.route("/", methods=['POST','GET'])

@@ -1,30 +1,21 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:835008554939:task-definition/lks-td-prod-result:6",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:390517303308:task-definition/lks-td-prod-result:1",
     "containerDefinitions": [
         {
             "name": "lks-result-prod-container",
-            "image": "835008554939.dkr.ecr.us-east-1.amazonaws.com/lks-voting-image:result-prod-latest",
+            "image": "390517303308.dkr.ecr.us-east-1.amazonaws.com/lks-voting-image:result-prod-latest",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "lks-result-prod-container-80-tcp",
-                    "containerPort": 80,
-                    "hostPort": 80,
+                    "name": "lks-result-prod-container-81-tcp",
+                    "containerPort": 81,
+                    "hostPort": 81,
                     "protocol": "tcp",
                     "appProtocol": "http"
                 }
             ],
             "essential": true,
-            "environment": [
-                {
-                    "name": "REDIS",
-                    "value": "master.lks-redis.ij2nrp.use1.cache.amazonaws.com"
-                },
-                {
-                    "name": "REDIS_HOST",
-                    "value": "master.lks-redis.ij2nrp.use1.cache.amazonaws.com"
-                }
-            ],
+            "environment": [],
             "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
@@ -43,10 +34,10 @@
         }
     ],
     "family": "lks-td-prod-result",
-    "taskRoleArn": "arn:aws:iam::835008554939:role/LabRole",
-    "executionRoleArn": "arn:aws:iam::835008554939:role/LabRole",
+    "taskRoleArn": "arn:aws:iam::390517303308:role/LabRole",
+    "executionRoleArn": "arn:aws:iam::390517303308:role/LabRole",
     "networkMode": "awsvpc",
-    "revision": 6,
+    "revision": 1,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -93,7 +84,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2026-03-04T02:12:52.851Z",
-    "registeredBy": "arn:aws:sts::835008554939:assumed-role/voclabs/user4821150=SMKN_10_-_Vierza",
+    "registeredAt": "2026-03-09T03:54:20.554Z",
+    "registeredBy": "arn:aws:sts::390517303308:assumed-role/voclabs/user4821150=SMKN_10_-_Vierza",
     "tags": []
 }
