@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:390517303308:task-definition/lks-td-prod-worker:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:390517303308:task-definition/lks-td-prod-worker:6",
     "containerDefinitions": [
         {
             "name": "lks-worker-prod-container",
@@ -29,7 +29,7 @@
     "taskRoleArn": "arn:aws:iam::390517303308:role/LabRole",
     "executionRoleArn": "arn:aws:iam::390517303308:role/LabRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 6,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -64,8 +64,8 @@
     "placementConstraints": [],
     "compatibilities": [
         "EC2",
-        "MANAGED_INSTANCES",
-        "FARGATE"
+        "FARGATE",
+        "MANAGED_INSTANCES"
     ],
     "requiresCompatibilities": [
         "FARGATE"
@@ -76,7 +76,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2026-03-09T03:54:51.513Z",
+    "registeredAt": "2026-03-10T09:48:01.990Z",
     "registeredBy": "arn:aws:sts::390517303308:assumed-role/voclabs/user4821150=SMKN_10_-_Vierza",
     "tags": []
 }

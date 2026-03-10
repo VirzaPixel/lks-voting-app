@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:390517303308:task-definition/lks-td-prod-result:4",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:390517303308:task-definition/lks-td-prod-result:5",
     "containerDefinitions": [
         {
             "name": "lks-result-prod-container",
@@ -7,17 +7,19 @@
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "lks-result-prod-container-81-tcp",
-                    "containerPort": 81,
-                    "hostPort": 81,
+                    "name": "lks-result-prod-container-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
                     "protocol": "tcp",
                     "appProtocol": "http"
                 }
             ],
             "essential": true,
             "environment": [],
+            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
+            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
@@ -25,7 +27,8 @@
                     "awslogs-create-group": "true",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
-                }
+                },
+                "secretOptions": []
             },
             "systemControls": []
         }
@@ -34,7 +37,7 @@
     "taskRoleArn": "arn:aws:iam::390517303308:role/LabRole",
     "executionRoleArn": "arn:aws:iam::390517303308:role/LabRole",
     "networkMode": "awsvpc",
-    "revision": 4,
+    "revision": 5,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -69,8 +72,8 @@
     "placementConstraints": [],
     "compatibilities": [
         "EC2",
-        "MANAGED_INSTANCES",
-        "FARGATE"
+        "FARGATE",
+        "MANAGED_INSTANCES"
     ],
     "requiresCompatibilities": [
         "FARGATE"
@@ -81,7 +84,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2026-03-09T06:15:27.942Z",
+    "registeredAt": "2026-03-10T09:47:27.309Z",
     "registeredBy": "arn:aws:sts::390517303308:assumed-role/voclabs/user4821150=SMKN_10_-_Vierza",
     "tags": []
 }
